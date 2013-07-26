@@ -7,7 +7,7 @@ app.all('/', function(request, response) {
 	restler.get('http://reddit.com/.json').on('complete', function(reddit) {
 		var titles = "<Response>";
 		for(var i = 0; i < 5; i++) {
-			titles += "<Sms>" + reddit.data.children[i].data.title + "<Sms>";
+			titles += "<Sms>" + reddit.data.children[i].data.title + "</Sms>";
 		}
 		titles +="</Response>";
 		response.send(titles);
